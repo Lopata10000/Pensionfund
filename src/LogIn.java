@@ -1,4 +1,7 @@
 import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Scanner;
 
 import static java.lang.System.in;
@@ -22,7 +25,13 @@ public class LogIn {
         {
             Scanner scan = new Scanner(reader);
 
-            if ( check == Files.lines(Paths.get(FILE_NAME.txt), StandardCharsets.UTF_8).anyMatch("c4ca4238a0b923820dcc509a6f75849b"::equals);)
+            if (Files.lines(Paths.get(userData), StandardCharsets.UTF_8).anyMatch(login::equals)&&Files.lines(Paths.get(userData), StandardCharsets.UTF_8).anyMatch(password::equals))
+            {
+                out.println("Такий акаунт знайдено");
+            }
+            else {
+                out.println("Такого акаунту немає");
+            }
 
             reader.close();
         } catch (FileNotFoundException e) {
