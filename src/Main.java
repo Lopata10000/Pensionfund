@@ -19,10 +19,10 @@ public class Main {
             switch (command){
 
                 case "1":
-                    LogIn.Registration();
+                    LogIn.registration();
                     break;
                 case "2":
-                    LogIn.Authorization();
+                    LogIn.authorization();
                     break;
                 case "3":
                     Calculator.Calculations();
